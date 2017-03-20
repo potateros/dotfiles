@@ -14,6 +14,7 @@ imagemagick
 lxappearance
 arandr
 arc-theme
+ubuntu-restricted-extras
 ``` 
 ---
 #### Available on GitHub
