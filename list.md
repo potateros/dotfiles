@@ -7,8 +7,8 @@ thunar
 vim
 vlc browser-plugin-vlc
 git
-playerctl
 compton
+feh
 scrot
 imagemagick
 lxappearance
@@ -17,6 +17,9 @@ arc-theme
 ubuntu-restricted-extras
 pactl
 pavucontrol
+gnome-tweak-tool
+conky
+
 ``` 
 ---
 #### Available on GitHub
@@ -47,9 +50,15 @@ fluxgui
 ```
 sudo add-apt-repository ppa:dawidd0811/neofetch
 ```
+- classicmenu-indicator
+```
+sudo apt-add-repository ppa:diesch/testing
+```
 
 ### Download .deb packages
 - [VSCode](https://code.visualstudio.com/)
 - [Slack](https://downloads.slack-edge.com/linux_releases/slack-desktop-2.5.2-amd64.deb)
 - [GitKraken](https://www.gitkraken.com/download/linux-deb)
 - [Whatever(Evernote Client)](https://github.com/CellarD0-0r/whatever/releases)
+- [playerctl](https://github.com/acrisci/playerctl/releases)
+
