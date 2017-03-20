@@ -15,6 +15,8 @@ lxappearance
 arandr
 arc-theme
 ubuntu-restricted-extras
+pactl
+pavucontrol
 ``` 
 ---
 #### Available on GitHub
@@ -40,6 +42,10 @@ cd xflux-gui
 python download-xflux.py
 sudo python setup.py install
 fluxgui
+```
+- neofetch
+```
+sudo add-apt-repository ppa:dawidd0811/neofetch
 ```
 
 ### Download .deb packages
