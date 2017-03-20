@@ -4,12 +4,16 @@
 ```
 i3
 thunar
+vim
 vlc browser-plugin-vlc
+git
 playerctl
 compton
 scrot
 imagemagick
-
+lxappearance
+arandr
+arc-theme
 ``` 
 ---
 #### Available on GitHub
