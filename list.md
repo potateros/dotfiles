@@ -54,6 +54,7 @@ sudo add-apt-repository ppa:dawidd0811/neofetch
 ```
 sudo apt-add-repository ppa:diesch/testing
 ```
+- [Volume Controls](https://github.com/hastinbe/i3-volume)
 
 ### Download .deb packages
 - [VSCode](https://code.visualstudio.com/)
