@@ -24,8 +24,14 @@ conky
 ---
 #### Available on GitHub
 
-[Font-Awesome](https://github.com/FortAwesome/Font-Awesome/releases)
-[Arc-theme](https://github.com/horst3180/Arc-theme)
+- [Volume Controls](https://github.com/hastinbe/i3-volume)
+
+- [Brightness Control using xbright](https://github.com/snobb/xbright)
+
+- [Font-Awesome](https://github.com/FortAwesome/Font-Awesome/releases)
+
+- [Arc-theme](https://github.com/horst3180/Arc-theme)
+
 
 ---
 ### Needs more steps
@@ -54,9 +60,6 @@ sudo add-apt-repository ppa:dawidd0811/neofetch
 ```
 sudo apt-add-repository ppa:diesch/testing
 ```
-- [Volume Controls](https://github.com/hastinbe/i3-volume)
-
-- [Brightness Control using xbright](https://github.com/snobb/xbright)
 
 ### Download .deb packages
 - [VSCode](https://code.visualstudio.com/)
