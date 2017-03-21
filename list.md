@@ -56,6 +56,8 @@ sudo apt-add-repository ppa:diesch/testing
 ```
 - [Volume Controls](https://github.com/hastinbe/i3-volume)
 
+- [Brightness Control using xbright](https://github.com/snobb/xbright)
+
 ### Download .deb packages
 - [VSCode](https://code.visualstudio.com/)
 - [Slack](https://downloads.slack-edge.com/linux_releases/slack-desktop-2.5.2-amd64.deb)
