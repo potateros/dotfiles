@@ -1,0 +1,25 @@
+//These are not supposed to be in the Linux config folders, but rather pasted
+//into VSCode's preferences file that is opened from within VSCode
+
+{
+    "vsicons.dontShowNewVersionMessage": true,
+    "vsicons.projectDetection.autoReload": true,
+    "workbench.iconTheme": "vs-seti",
+    "workbench.colorTheme": "Base16 Dark Monokai",
+
+    "editor.wordWrap": "on",
+    "editor.fontSize": "14,",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.tabSize": 2,
+    "editor.minimap.enabled": true,
+
+    "window.openFoldersInNewWindow": "on",
+    "window.reopenFolders": "all",
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
+
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+
+    "extensions.autoUpdate": true,
+    "vsicons.presets.angular": false,
+}
