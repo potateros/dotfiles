@@ -265,3 +265,9 @@ exec --no-startup-id classicmenu-indicator
 exec --no-startup-id fluxgui
 exec xinput set-prop 11 272 1.5
 exec xinput set-prop 11 273 1.5
+exec xinput set-prop 12 272 1.5
+exec xinput set-prop 12 273 1.5
+exec xinput set-prop 13 272 1.5
+exec xinput set-prop 13 273 1.5
+exec xinput set-prop 14 272 1.5
+exec xinput set-prop 14 273 1.5
