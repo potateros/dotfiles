@@ -100,7 +100,7 @@ bindsym $mod+a focus parent
 set $workspace1 "1 "
 set $workspace2 "2 "
 set $workspace3 "3 "
-set $workspace4 "4 "
+set $workspace4 "4 "
 set $workspace5 "5 "
 set $workspace6 "6 "
 set $workspace7 "7 "
@@ -111,6 +111,7 @@ set $workspace10 "10 "
 # force workspace window location
 assign [class="Google-chrome"] $workspace2
 assign [class="Code"] $workspace3
+assign [class="Firefox"] $workspace4
 assign [class="Thunar"] $workspace7
 assign [class="GitKraken"] $workspace8
 assign [class="Slack"] $workspace9
