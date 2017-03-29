@@ -60,6 +60,11 @@ sudo add-apt-repository ppa:dawidd0811/neofetch
 ```
 sudo apt-add-repository ppa:diesch/testing
 ```
+- jupiter (power management)
+```
+sudo add-apt-repository ppa:webupd8team/jupiter
+sudo apt-get update && sudo apt-get install jupiter
+```
 
 ### Download .deb packages
 - [VSCode](https://code.visualstudio.com/)
