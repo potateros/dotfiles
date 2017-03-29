@@ -19,7 +19,7 @@ pactl
 pavucontrol
 gnome-tweak-tool
 conky
-
+htop
 ``` 
 ---
 #### Available on GitHub
@@ -59,11 +59,6 @@ sudo add-apt-repository ppa:dawidd0811/neofetch
 - classicmenu-indicator
 ```
 sudo apt-add-repository ppa:diesch/testing
-```
-- jupiter (power management)
-```
-sudo add-apt-repository ppa:webupd8team/jupiter
-sudo apt-get update && sudo apt-get install jupiter
 ```
 
 ### Download .deb packages
