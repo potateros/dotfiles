@@ -110,8 +110,6 @@ set $workspace10 "10 "
 
 # force workspace window location
 assign [class="Google-chrome"] $workspace2
-assign [class="Code"] $workspace3
-assign [class="Firefox"] $workspace4
 assign [class="Thunar"] $workspace7
 assign [class="GitKraken"] $workspace8
 assign [class="Slack"] $workspace9
@@ -256,7 +254,7 @@ bindsym XF86MonBrightnessDown exec xbright -30 # decrease screen brightness
 
 # Custom
 bindsym $mod+shift+x exec gnome-screensaver-command --lock
-exec_always feh --bg-scale /home/ericn/Pictures/skyline-buildings-new-york-skyscrapers.jpg
+exec_always feh --bg-scale "/media/ericn/ddrive/OneDrive/Pictures/Wallpapers/Linux Defaults/central_park.jpg"
 exec_always compton -f
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id indicator-brightness
@@ -264,12 +262,3 @@ exec_always --no-startup-id indicator-brightness
 exec --no-startup-id classicmenu-indicator
 exec --no-startup-id fluxgui
 exec --no-startup-id dropbox start
-
-exec xinput set-prop 11 272 1.5
-exec xinput set-prop 11 273 1.5
-exec xinput set-prop 12 272 1.5
-exec xinput set-prop 12 273 1.5
-exec xinput set-prop 13 272 1.5
-exec xinput set-prop 13 273 1.5
-exec xinput set-prop 14 272 1.5
-exec xinput set-prop 14 273 1.5
