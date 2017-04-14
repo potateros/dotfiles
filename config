@@ -109,11 +109,9 @@ set $workspace9 "9 "
 set $workspace10 "10 "
 
 # force workspace window location
-assign [class="Google-chrome"] $workspace2
-assign [class="Thunar"] $workspace7
-assign [class="GitKraken"] $workspace8
+# assign [class="Google-chrome"] $workspace2
+# assign [class="Thunar"] $workspace7
 assign [class="Slack"] $workspace9
-assign [class="Spotify"] $workspace10
 
 # workspace shortcuts
 bindsym $mod+Shift+A workspace prev
@@ -262,6 +260,12 @@ exec_always compton -f
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id indicator-brightness
 
+exec_always --no-startup-id synclient HorizEdgeScroll=1 PalmDetect=1 TapButton3=2 ClickFinger3=2 TapButton2=3 ClickFinger2=3 VertScrollDelta=-40
+
+exec --no-startup-id todo-indicator ~/Dropbox/todo.txt
+exec --no-startup-id todo-indicator ~/Dropbox/schedule.txt
+
 exec --no-startup-id classicmenu-indicator
 exec --no-startup-id fluxgui
 exec --no-startup-id ~/.dropbox-dist/dropboxd
+
