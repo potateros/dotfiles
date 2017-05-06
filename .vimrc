@@ -2,7 +2,7 @@ syntax enable
 set hidden
 set history=100
 set number
-colorscheme monokai
+colorscheme slate 
 hi Normal ctermbg=none
 set smarttab
 set tabstop=2
