@@ -1,4 +1,4 @@
-### Things needed for i3wm to work properly
+### Things needed for proper i3 install
 
 #### Available in default Ubuntu PPA
 ```
@@ -20,7 +20,8 @@ pavucontrol
 gnome-tweak-tool
 conky
 htop
-``` 
+redshift
+```
 ---
 #### Available on GitHub
 
@@ -42,16 +43,6 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 sudo apt-get update
 sudo apt-get install spotify-client
 ```
-- f.lux
-```
-sudo apt-get install git python-appindicator python-xdg python-pexpect python-gconf python-gtk2 python-glade2 libxxf86vm1
-cd /tmp
-git clone "https://github.com/xflux-gui/xflux-gui.git"
-cd xflux-gui
-python download-xflux.py
-sudo python setup.py install
-fluxgui
-```
 - neofetch
 ```
 sudo add-apt-repository ppa:dawidd0811/neofetch
@@ -64,7 +55,5 @@ sudo apt-add-repository ppa:diesch/testing
 ### Download .deb packages
 - [VSCode](https://code.visualstudio.com/)
 - [Slack](https://downloads.slack-edge.com/linux_releases/slack-desktop-2.5.2-amd64.deb)
-- [GitKraken](https://www.gitkraken.com/download/linux-deb)
-- [Whatever(Evernote Client)](https://github.com/CellarD0-0r/whatever/releases)
 - [playerctl](https://github.com/acrisci/playerctl/releases)
 

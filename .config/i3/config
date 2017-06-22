@@ -88,7 +88,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -150,7 +150,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -181,7 +181,7 @@ bindsym $mod+r mode "resize"
 set $base00 #101218
 set $base01 #263238
 set $base02 #252936
-set $base03 #465258
+set $base03 #647E8A
 set $base04 #C0C5CE
 set $base05 #d1d4e0
 set $base06 #C9CCDB
@@ -195,6 +195,16 @@ set $base0D #97bbf7
 set $base0E #c0b7f9
 set $base0F #fcc09e
 
+set $matbackg #263238
+set $matutext #546E7A
+set $matftext #ffffff
+set $matstatl #C0C5CE
+
+set $dsolbase00 #657b83
+set $dsolbase01 #586e75
+set $dsolbase02 #073642
+set $dsolbase03 #002b36
+
 # Window Colours         border          background      text            indicator
 client.focused          $base01         $base01         $base07         $base00
 client.focused_inactive $base02         $base02         $base03         $base0F
@@ -204,12 +214,15 @@ client.urgent           $base02         $base08         $base00         $base0F
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        #status_command python /path/to/powerline/bindings/i3/powerline-i3.py
+        #font pango:PowerlineFont 12
+
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         font pango: System San Francisco Display, FontAwesome 9
         colors {
                 separator $base03
                 background $base01
-                statusline $base0C
+                statusline $base04
                 #                       border  background      text
                 focused_workspace       $base01 $base01         $base07
                 active_workspace        $base01 $base01         $base03
@@ -229,7 +242,7 @@ set $statuscmd i3blocks
 
 # Signal used to update the status line (used with -u, must also use -t)
 #   i3blocks uses SIGRTMIN+10 by default
-#   i3status uses SIGUSR1 by default
+#   i3status uses SIGUSR1 by playerdefault
 set $statussig SIGUSR1
 
 # Amount to increase/decrease volume as a percentage (used with -i, -d)
@@ -258,19 +271,30 @@ bindsym XF86MonBrightnessDown exec xbright -30 # decrease screen brightness
 bindsym Print exec scrot -e 'mv $f ~/Pictures/$f'
 
 # Custom
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
+mode "$mode_system" {
+
+    bindsym l exec ~/apps/i3lock-fancy/lock -p -- scrot -z
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+shift+e mode "$mode_system"
 bindsym $mod+shift+x exec ~/apps/i3lock-fancy/lock -p -- scrot -z
-bindsym $mod+backslash exec nautilus
 
-exec_always feh --bg-fill "/home/ericn/Pictures/wall/sQOsdM7.jpg"
+exec_always feh --bg-fill "/home/ericn/ddrive/OneDrive/Pictures/Wallpapers/Android/default_wallpaper.jpg"
 exec_always compton -f
-exec_always --no-startup-id nm-applet
-exec_always --no-startup-id indicator-brightness
-
 exec_always --no-startup-id synclient HorizEdgeScroll=1 PalmDetect=1 TapButton3=2 ClickFinger3=2 TapButton2=3 ClickFinger2=3 VertScrollDelta=-40
 
+exec --no-startup-id nm-applet
 exec --no-startup-id todo-indicator ~/Dropbox/todo.txt
-# exec --no-startup-id todo-indicator ~/Dropbox/schedule.txt
-
 exec --no-startup-id classicmenu-indicator
 exec --no-startup-id gtk-redshift
 exec --no-startup-id ~/.dropbox-dist/dropboxd

@@ -2,7 +2,7 @@ source ~/.antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle command-not-found
-antigen theme robbyrussell
+# antigen theme robbyrussell
 antigen apply
 
 # If you come from bash you might have to change your $PATH.
@@ -14,7 +14,7 @@ antigen apply
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bira"
+ZSH_THEME="arrow"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -95,3 +95,15 @@ source $ZSH/oh-my-zsh.sh
 if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
     source /usr/share/powerline/bindings/zsh/powerline.zsh
 fi
+
+# custom alias
+alias ..="cd .."
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias i3conf="vim ~/.config/i3/config"
+
+# CPU Governor
+function setgov ()
+{
+    echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+}
