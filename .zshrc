@@ -5,6 +5,46 @@ antigen bundle command-not-found
 # antigen theme robbyrussell
 antigen apply
 
+# PATH
+export PATH=/home/ericn/apps/idea/bin:$PATH
+
+#Custom stuff
+if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
+    source /usr/share/powerline/bindings/zsh/powerline.zsh
+fi
+
+# NodeJS
+PATH="$HOME/.node_modules/bin:$PATH"
+export npm_config_prefix=~/.node_modules
+
+# Yarn
+#export PATH="$PATH:/opt/yarn-0.24.6/bin
+
+# custom alias
+alias ..="cd .."
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias i3conf="vim ~/.config/i3/config"
+alias rmdir="trash"
+alias virenvwra="virtualenvwrapper"
+alias fucking="sudo"
+alias git add --all && git commit -m "quick commit" && git push = gitquick
+alias py="python3"
+#alias disablekeyboard="xinput float 17"
+#alias enablekeyboard="xinput reattach 17 3"
+
+#virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source ~/.local/bin/virtualenvwrapper.sh
+
+# CPU Governor
+function setgov ()
+{
+    echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+}
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -36,7 +76,7 @@ ZSH_THEME="arrow"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -90,20 +130,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Custom stuff
-if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
-    source /usr/share/powerline/bindings/zsh/powerline.zsh
-fi
-
-# custom alias
-alias ..="cd .."
-alias ...="cd ../../"
-alias ....="cd ../../../"
-alias i3conf="vim ~/.config/i3/config"
-
-# CPU Governor
-function setgov ()
-{
-    echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
-}
