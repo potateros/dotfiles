@@ -217,7 +217,7 @@ bar {
         #status_command python /path/to/powerline/bindings/i3/powerline-i3.py
         #font pango:PowerlineFont 12
 
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        status_command i3blocks -c ~/apps/i3blocks/i3blocks.conf
         font pango: System San Francisco Display, FontAwesome 9
         colors {
                 separator $base03
@@ -289,13 +289,11 @@ mode "$mode_system" {
 bindsym $mod+shift+e mode "$mode_system"
 bindsym $mod+shift+x exec ~/apps/i3lock-fancy/lock -p -- scrot -z
 
-exec_always feh --bg-fill "/home/ericn/ddrive/OneDrive/Pictures/Wallpapers/Android/default_wallpaper.jpg"
+exec_always feh --recursive --randomize --bg-fill "/home/ericn/ddrive/OneDrive/Pictures/Wallpapers"
 exec_always compton -f
 exec_always --no-startup-id synclient HorizEdgeScroll=1 PalmDetect=1 TapButton3=2 ClickFinger3=2 TapButton2=3 ClickFinger2=3 VertScrollDelta=-40
 
 exec --no-startup-id nm-applet
-exec --no-startup-id todo-indicator ~/Dropbox/todo.txt
 exec --no-startup-id classicmenu-indicator
 exec --no-startup-id gtk-redshift
 exec --no-startup-id ~/.dropbox-dist/dropboxd
-

@@ -8,11 +8,6 @@ antigen apply
 # PATH
 export PATH=/home/ericn/apps/idea/bin:$PATH
 
-#Custom stuff
-if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
-    source /usr/share/powerline/bindings/zsh/powerline.zsh
-fi
-
 # NodeJS
 PATH="$HOME/.node_modules/bin:$PATH"
 export npm_config_prefix=~/.node_modules
@@ -28,10 +23,12 @@ alias i3conf="vim ~/.config/i3/config"
 alias rmdir="trash"
 alias virenvwra="virtualenvwrapper"
 alias fucking="sudo"
-alias git add --all && git commit -m "quick commit" && git push = gitquick
+#alias git add --all && git commit -m "quick commit" && git push = gitquick
 alias py="python3"
-#alias disablekeyboard="xinput float 17"
-#alias enablekeyboard="xinput reattach 17 3"
+alias nokey17="xinput float 17"
+alias yeskey17="xinput reattach 17 3"
+alias nokey15="xinput float 15"
+alias yeskey15="xinput reattach 15 3"
 
 #virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
