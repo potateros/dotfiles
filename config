@@ -268,7 +268,11 @@ bindsym XF86MonBrightnessUp exec xbright +30 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbright -30 # decrease screen brightness
 
 # Printscreen
-bindsym Print exec scrot -e 'mv $f ~/Pictures/$f'
+#bindsym print exec scrot -e 'mv $f ~/Dropbox/Photos/Screenshots/'
+#bindsym $mod+print exec scrot -s -e 'mv $f ~/Dropbox/Photos/Screenshots/'
+bindsym Print exec maim ~/Dropbox/Photos/Screenshots/$(date +%s).png
+bindsym $mod+Print exec maim -s ~/Dropbox/Photos/Screenshots/$(date +%s).png
+
 
 # Custom
 
@@ -289,7 +293,8 @@ mode "$mode_system" {
 bindsym $mod+shift+e mode "$mode_system"
 bindsym $mod+shift+x exec ~/apps/i3lock-fancy/lock -p -- scrot -z
 
-exec_always feh --recursive --randomize --bg-fill "/home/ericn/ddrive/OneDrive/Pictures/Wallpapers"
+#exec_always feh --recursive --randomize --bg-fill "/home/ericn/ddrive/OneDrive/Pictures/Wallpapers"
+exec_always feh --bg-fill "/home/ericn/ddrive/OneDrive/Pictures/Wallpapers/Motivational/427408.jpg"
 exec_always compton -f
 exec_always --no-startup-id synclient HorizEdgeScroll=1 PalmDetect=1 TapButton3=2 ClickFinger3=2 TapButton2=3 ClickFinger2=3 VertScrollDelta=-40
 

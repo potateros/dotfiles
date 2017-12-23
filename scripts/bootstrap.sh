@@ -1,3 +1,6 @@
+# NOTE: doesn't work at the momemt, cbf to fix it
+# DO NOT USE
+
 ### Variables
 
 dir=~/dotfiles #dotfiles directory
