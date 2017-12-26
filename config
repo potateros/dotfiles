@@ -4,9 +4,7 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
 # i3 config file (v4)
-#
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
@@ -39,7 +37,7 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -padding 10 -opacity "90" -bw 0 -bc "$base01" -bg "$base03" -fg "$base07" -hlbg "$base05" -font "System San Francisco Display 10" -hlfg "#9575cd"
+bindsym $mod+d exec rofi -show run -padding 10 -opacity "50" -bw 0 -bc "$base01" -bg "$base03" -fg "$base07" -hlbg "$base05" -font "System San Francisco Display 10" -hlfg "#9575cd"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -47,10 +45,10 @@ bindsym $mod+d exec rofi -show run -padding 10 -opacity "90" -bw 0 -bc "$base01"
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -59,10 +57,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -91,27 +89,37 @@ bindsym $mod+Shift+space floating toggle
 # bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
 
 # workspace names
-set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5 "
-set $workspace6 "6 "
-set $workspace7 "7 "
-set $workspace8 "8 "
-set $workspace9 "9 "
-set $workspace10 "10 "
+set $wksp1 "1 "
+set $wksp2 "2 "
+set $wksp3 "3 "
+set $wksp4 "4 "
+set $wksp5 "5 "
+set $wksp6 "6 "
+set $wksp7 "7 "
+set $wksp8 "8 "
+set $wksp9 "9 "
+set $wksp10 "10 "
+set $wksp11 "11"
+set $wksp12 "12"
+set $wksp13 "13"
+set $wksp14 "14"
+set $wksp15 "15"
+set $wksp16 "16"
+set $wksp17 "17"
+set $wksp18 "18"
+set $wksp19 "19"
+set $wksp20 "20"
 
 # force workspace window location
-# assign [class="Google-chrome"] $workspace2
-# assign [class="Thunar"] $workspace7
-assign [class="Slack"] $workspace9
+# assign [class="Google-chrome"] $wksp2
+assign [class="Slack"] $wksp9
+assign [class="Spotify"] $wksp10
 
 # workspace shortcuts
 bindsym $mod+Shift+A workspace prev
@@ -122,48 +130,73 @@ bindsym $mod+Ctrl+Shift+A i3-msg move workspace to output left
 bindsym $mod+Ctrl+Shift+D i3-msg move workspace to output right
 
 # switch to workspace
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace $workspace8
-bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10
+bindsym $mod+1 workspace $wksp1
+bindsym $mod+2 workspace $wksp2
+bindsym $mod+3 workspace $wksp3
+bindsym $mod+4 workspace $wksp4
+bindsym $mod+5 workspace $wksp5
+bindsym $mod+6 workspace $wksp6
+bindsym $mod+7 workspace $wksp7
+bindsym $mod+8 workspace $wksp8
+bindsym $mod+9 workspace $wksp9
+bindsym $mod+0 workspace $wksp10
+
+bindsym $mod+Ctrl+1 workspace $wksp11
+bindsym $mod+Ctrl+2 workspace $wksp12
+bindsym $mod+Ctrl+3 workspace $wksp13
+bindsym $mod+Ctrl+4 workspace $wksp14
+bindsym $mod+Ctrl+5 workspace $wksp15
+bindsym $mod+Ctrl+6 workspace $wksp16
+bindsym $mod+Ctrl+7 workspace $wksp17
+bindsym $mod+Ctrl+8 workspace $wksp18
+bindsym $mod+Ctrl+9 workspace $wksp19
+bindsym $mod+Ctrl+0 workspace $wksp20
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace $workspace8
-bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+1 move container to workspace $wksp1
+bindsym $mod+Shift+2 move container to workspace $wksp2
+bindsym $mod+Shift+3 move container to workspace $wksp3
+bindsym $mod+Shift+4 move container to workspace $wksp4
+bindsym $mod+Shift+5 move container to workspace $wksp5
+bindsym $mod+Shift+6 move container to workspace $wksp6
+bindsym $mod+Shift+7 move container to workspace $wksp7
+bindsym $mod+Shift+8 move container to workspace $wksp8
+bindsym $mod+Shift+9 move container to workspace $wksp9
+bindsym $mod+Shift+0 move container to workspace $wksp10
+
+bindsym $mod+Shift+Ctrl+1 move container to workspace $wksp11
+bindsym $mod+Shift+Ctrl+2 move container to workspace $wksp12
+bindsym $mod+Shift+Ctrl+3 move container to workspace $wksp13
+bindsym $mod+Shift+Ctrl+4 move container to workspace $wksp14
+bindsym $mod+Shift+Ctrl+5 move container to workspace $wksp15
+bindsym $mod+Shift+Ctrl+6 move container to workspace $wksp16
+bindsym $mod+Shift+Ctrl+7 move container to workspace $wksp17
+bindsym $mod+Shift+Ctrl+8 move container to workspace $wksp18
+bindsym $mod+Shift+Ctrl+9 move container to workspace $wksp19
+bindsym $mod+Shift+Ctrl+0 move container to workspace $wksp20
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+       # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        #bindsym j resize shrink width 10 px or 10 ppt
+        #bindsym k resize grow height 10 px or 10 ppt
+        #bindsym l resize shrink height 10 px or 10 ppt
+        #bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -175,8 +208,6 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
-bindsym $mod+r mode "resize"
 
 set $base00 #101218
 set $base01 #263238
@@ -236,14 +267,13 @@ bar {
 # Path to volume control, without trailing slash
 set $volumepath ~/apps/i3-volume
 
-# Command for the status line (used with -t, must also use -u)
-#   ie: i3blocks, i3status
+# Command for the status line (used with -t, must also use -u) (i3blocks, i3status)
 set $statuscmd i3blocks
 
 # Signal used to update the status line (used with -u, must also use -t)
 #   i3blocks uses SIGRTMIN+10 by default
 #   i3status uses SIGUSR1 by playerdefault
-set $statussig SIGUSR1
+set $statussig SIGRTMIN+10
 
 # Amount to increase/decrease volume as a percentage (used with -i, -d)
 set $volumestep 5
@@ -273,8 +303,10 @@ bindsym XF86MonBrightnessDown exec xbright -30 # decrease screen brightness
 bindsym Print exec maim ~/Dropbox/Photos/Screenshots/$(date +%s).png
 bindsym $mod+Print exec maim -s ~/Dropbox/Photos/Screenshots/$(date +%s).png
 
-
-# Custom
+# Power menu - allows user to lock, logout, sleep, hibernate, reboot, shutdown
+#   hibernate doesn't work on my machine, but YMMV
+bindsym $mod+shift+e mode "$mode_system"
+bindsym $mod+shift+x exec ~/apps/i3lock-fancy/lock -p -- scrot -z
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
 mode "$mode_system" {
@@ -290,11 +322,9 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+shift+e mode "$mode_system"
-bindsym $mod+shift+x exec ~/apps/i3lock-fancy/lock -p -- scrot -z
 
 #exec_always feh --recursive --randomize --bg-fill "/home/ericn/ddrive/OneDrive/Pictures/Wallpapers"
-exec_always feh --bg-fill "/home/ericn/ddrive/OneDrive/Pictures/Wallpapers/Motivational/427408.jpg"
+exec_always feh --bg-fill "/home/ericn/ddrive/Wallpapers/Motivational/427408.jpg"
 exec_always compton -f
 exec_always --no-startup-id synclient HorizEdgeScroll=1 PalmDetect=1 TapButton3=2 ClickFinger3=2 TapButton2=3 ClickFinger2=3 VertScrollDelta=-40
 
