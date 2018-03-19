@@ -1,0 +1,7 @@
+# Numerous always-ignore files
+*.swp
+*~
+._*
+
+# Folders to ignore
+node_modules

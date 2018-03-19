@@ -1,52 +1,8 @@
-source ~/.antigen/antigen.zsh
-antigen use oh-my-zsh
-antigen bundle git
-antigen bundle command-not-found
-# antigen theme robbyrussell
-antigen apply
-
-# PATH
-export PATH=/home/ericn/apps/idea/bin:$PATH
-
-# NodeJS
-PATH="$HOME/.node_modules/bin:$PATH"
-export npm_config_prefix=~/.node_modules
-
-# Yarn
-#export PATH="$PATH:/opt/yarn-0.24.6/bin
-
-# custom alias
-alias ..="cd .."
-alias ...="cd ../../"
-alias ....="cd ../../../"
-alias i3conf="vim ~/.config/i3/config"
-alias rmdir="trash"
-alias virenvwra="virtualenvwrapper"
-alias fucking="sudo"
-#alias git add --all && git commit -m "quick commit" && git push = gitquick
-alias py="python3"
-alias nokey17="xinput float 17"
-alias yeskey17="xinput reattach 17 3"
-alias nokey15="xinput float 15"
-alias yeskey15="xinput reattach 15 3"
-
-#virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source ~/.local/bin/virtualenvwrapper.sh
-
-# CPU Governor
-function setgov ()
-{
-    echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
-}
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/ericn/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -127,3 +83,35 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+PATH=$PATH:~/.local/bin
+PATH=$PATH:~/.local/bin
+
+# python
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source ~/.local/bin/virtualenvwrapper.sh
+PYTHONPATH=:$HOME/.virtualenvs/
+export PATH=$HOME/anaconda3/bin:$PATH
+
+# node
+PATH="$HOME/.node_modules/bin:$PATH"
+export npm_config_prefix=~/.node_modules
+
+# custom alias
+alias ..="cd .."
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias i3conf="vim ~/.config/i3/config"
+alias rmdir="trash"
+alias virenvwra="virtualenvwrapper"
+alias fucking="sudo"
+#alias git add --all && git commit -m "quick commit" && git push = gitquick
+alias py="python3"
+
+# CPU Governor
+function setgov ()
+{
+    echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+}

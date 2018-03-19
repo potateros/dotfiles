@@ -96,12 +96,12 @@ bindsym $mod+Shift+space floating toggle
 
 # workspace names
 set $wksp1 "1 "
-set $wksp2 "2 "
-set $wksp3 "3 "
-set $wksp4 "4 "
-set $wksp5 "5 "
-set $wksp6 "6 "
-set $wksp7 "7 "
+set $wksp2 "2 "
+set $wksp3 "3 "
+set $wksp4 "4 "
+set $wksp5 "5 "
+set $wksp6 "6 "
+set $wksp7 "7 "
 set $wksp8 "8 "
 set $wksp9 "9 "
 set $wksp10 "10 "
@@ -323,8 +323,8 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-#exec_always feh --recursive --randomize --bg-fill "/home/ericn/ddrive/OneDrive/Pictures/Wallpapers"
-exec_always feh --bg-fill "/home/ericn/ddrive/Wallpapers/Motivational/427408.jpg"
+exec_always feh --recursive --randomize --bg-fill "~/Pictures/Wallpapers/Wallpaperai"
+#exec_always feh --bg-fill "~/Pictures/Wallpapers/Motivational/427408.jpg"
 exec_always compton -f
 exec_always --no-startup-id synclient HorizEdgeScroll=1 PalmDetect=1 TapButton3=2 ClickFinger3=2 TapButton2=3 ClickFinger2=3 VertScrollDelta=-40
 
