@@ -4,6 +4,8 @@ Configuration files for my i3wm install
 
 (Tested on Xubuntu and Ubuntu, not sure about others)
 
+- `.fonts/` are fonts that I use for both UI and editors
+
 - `.vim/colors/monokai.vim` is my modified color scheme for vim
 
 - `scripts/` contain scripts to be placed in `~/apps/`
@@ -66,6 +68,8 @@ sudo add-apt-repository ppa:diesch/testing
 
 - [Font-Awesome](https://github.com/FortAwesome/Font-Awesome/releases)
 
+- [Fira Code](https://github.com/tonsky/FiraCode)
+
 - [Arc-theme](https://github.com/horst3180/Arc-theme)
 
 - [playerctl](https://github.com/acrisci/playerctl/releases)
@@ -104,16 +108,16 @@ Use `sudo snap install [package-name]` for these following apps:
 
 1. Create necessary folders
 ```
-mkdir ~/apps ~/git ~/Pictures/wallpapers
+mkdir ~/apps ~/git ~/Pictures/wallpapers ~/.fonts
 ```
 
-1. Install stuff
+2. Install stuff
 ```
 sudo apt-get update
 sudo apt-get install i3 vim git compton feh imagemagick lxappearance arandr arc-theme ubuntu-restricted-extras pactl pavucontrol conky htop redshift maim zsh
 ```
 
-1. Set up git, clone repo, and set as working dir
+3. Set up git, clone repo, and set as working dir
 ```
 git config --global user.name 'potateros'
 git config --global user.email 'ericngu97@gmail.com'
@@ -122,7 +126,7 @@ git clone git://github.com/potateros/dotfiles.git ~/git/dotfiles/
 cd ~/git/dotfiles
 ```
 
-1. Install oh-my-zsh and copy `.zshrc` and `.vimrc` to `home`.
+4. Install oh-my-zsh and copy `.zshrc` and `.vimrc` to `home`.
 ```
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 mv ~/.zshrc ~/.zshrc.bak
@@ -130,19 +134,24 @@ mv ~/.vimrc ~/.vimrc.bak
 cp .zshrc .vimrc ~/
 ```
 
-1. Place `config` in `~/.config/i3/`
+5. Place `config` in `~/.config/i3/`
 ```
 mv ~/.config/i3/config ~/.config/i3/config.bak
 cp config ~/.config/i3/
 ```
 
-1. Unzip and place `apps.tar.gz` in `~/apps/`
+6. Unzip and place `apps.tar.gz` in `~/apps/`
 ```
 mkdir ~/apps/
 tar -xvzf apps.tar.gz -C ~/apps/
 ```
 
-1. Install Dropbox, VSCode, NodeJS, Anaconda
+7. Copy fonts
+```
+cp .fonts/* ~/.fonts/
+```
+
+8. Install Dropbox, VSCode, NodeJS, Anaconda
 ```
 sudo chmod +x ~/apps/upedit.sh
 sudo ~/apps/upedit.sh
@@ -156,28 +165,23 @@ sudo chmod +x /tmp/anaconda.sh
 sudo /tmp/anaconda.sh
 ```
 
-1. Install snaps
+9. Install snaps
 ```
 sudo snap install atom --classic
 sudo snap install chromium --classic
 sudo snap install firefox --classic
 sudo snap install intellij-idea-ultimate --classic
-sudo snap install mailspring
-sudo snap install pencilsheep
-sudo snap install polarr
-sudo snap install skype
 sudo snap install slack --classic
-sudo snap install spotify
-sudo snap install vlc --classic
+sudo snap install mailspring pencilsheep polarr skype spotify vlc
 ```
 
-1. Get wallpapers back
+10. Get wallpapers back
 - Download wallpapers and then
 ```
 unzip file.zip -d ~/Pictures/wallpapers/
 ```
 
-1. Restore VSCode settings
+11. Restore VSCode settings
 
 - `code --install-extension Shan.code-settings-sync`
 
@@ -186,7 +190,7 @@ unzip file.zip -d ~/Pictures/wallpapers/
 ---
 ## To-Do
 
-- Create a script that an automate most (if not all) of the processes above
+- Create a script that can automate most (if not all) of the processes above
 
 - Test on other ubuntu-based distros
 
