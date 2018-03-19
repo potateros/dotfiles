@@ -107,7 +107,7 @@ Use `sudo snap install [package-name]` for these following apps:
 mkdir ~/apps ~/git ~/Pictures/wallpapers
 ```
 
-1. Install everything in [Available in default Ubuntu PPA](#default-ppa)
+1. Install stuff
 ```
 sudo apt-get update
 sudo apt-get install i3 vim git compton feh imagemagick lxappearance arandr arc-theme ubuntu-restricted-extras pactl pavucontrol conky htop redshift maim zsh
@@ -142,10 +142,18 @@ mkdir ~/apps/
 tar -xvzf apps.tar.gz -C ~/apps/
 ```
 
-1. Install Dropbox and VSCode
+1. Install Dropbox, VSCode, NodeJS, Anaconda
 ```
 sudo chmod +x ~/apps/upedit.sh
 sudo ~/apps/upedit.sh
+
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt-get install -y build-essential
+
+wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh -O /tmp/anaconda.sh
+sudo chmod +x /tmp/anaconda.sh
+sudo /tmp/anaconda.sh
 ```
 
 1. Install snaps
@@ -169,6 +177,12 @@ sudo snap install vlc --classic
 unzip file.zip -d ~/Pictures/wallpapers/
 ```
 
+1. Restore VSCode settings
+
+- `code --install-extension Shan.code-settings-sync`
+
+- Open VSCode and set up Settings Sync
+
 ---
 ## To-Do
 
@@ -176,3 +190,9 @@ unzip file.zip -d ~/Pictures/wallpapers/
 
 - Test on other ubuntu-based distros
 
+---
+## Disclaimer
+
+__Remember to change the git configurations to reflect your username and email!__
+
+I've used this on my laptop, but I cannot guarantee it will work on yours. Please don't hate me if it doesn't. Please do let me know if it does though. Thanks ♥
