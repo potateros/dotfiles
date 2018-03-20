@@ -87,31 +87,9 @@ source $ZSH/oh-my-zsh.sh
 PATH=$PATH:~/.local/bin
 PATH=$PATH:~/.local/bin
 
-# python
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source ~/.local/bin/virtualenvwrapper.sh
-PYTHONPATH=:$HOME/.virtualenvs/
-export PATH=$HOME/anaconda3/bin:$PATH
-
-# node
-PATH="$HOME/.node_modules/bin:$PATH"
-export npm_config_prefix=~/.node_modules
-
 # custom alias
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias i3conf="vim ~/.config/i3/config"
-alias rmdir="trash"
-alias virenvwra="virtualenvwrapper"
-alias fucking="sudo"
-#alias git add --all && git commit -m "quick commit" && git push = gitquick
-alias py="python3"
 
-# CPU Governor
-function setgov ()
-{
-    echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
-}
