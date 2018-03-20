@@ -14,7 +14,7 @@ Configuration files for my i3wm install
 
 - `.vimrc` & `.zshrc` are to be placed in the home folder
 
-- `apps.tar.gz` to be extracted into `~/apps/`
+- `apps.zip` to be extracted into `~/apps/`
 
 - `config` is my i3 configuration file, to be placed in
 
@@ -28,34 +28,25 @@ Configuration files for my i3wm install
 ### Available in default Ubuntu PPA
 ```
 i3
+i3blocks
+rofi
+feh
 vim
+zsh
+curl
 git
 compton
-feh
-imagemagick
 lxappearance
 arandr
 arc-theme
 ubuntu-restricted-extras
-pactl
 pavucontrol
-conky
 htop
 redshift
 maim
-zsh
-```
-
----
-
-### Needs to add ppa before installing
-- neofetch
-```
-sudo add-apt-repository ppa:dawidd0811/neofetch
-```
-- classicmenu-indicator
-```
-sudo add-apt-repository ppa:diesch/testing
+scrot
+neofetch
+gnome-tweak-tool (if using ubuntu)
 ```
 
 ---
@@ -106,27 +97,33 @@ Use `sudo snap install [package-name]` for these following apps:
 
 ## Install Checklist
 
-1. Create necessary folders
+### 1. Create necessary folders
 ```
-mkdir ~/apps ~/git ~/Pictures/wallpapers ~/.fonts
+mkdir ~/apps ~/git ~/Pictures/wallpapers ~/.fonts ~/.config/i3
 ```
 
-2. Install stuff
+### 2. Install stuff
+You can install your desired snaps at the same time to save time
 ```
 sudo apt-get update
-sudo apt-get install i3 vim git compton feh imagemagick lxappearance arandr arc-theme ubuntu-restricted-extras pactl pavucontrol conky htop redshift maim zsh
+sudo apt-get install i3 i3blocks rofi feh vim zsh curl git compton scrot lxappearance arandr arc-theme ubuntu-restricted-extras pavucontrol htop redshift maim neofetch gnome-tweak-tool
 ```
 
-3. Set up git, clone repo, and set as working dir
+### 3. Set up git, clone repo, and set as working dir
+
 ```
+cd .ssh && ssh-keygen
 git config --global user.name 'potateros'
 git config --global user.email 'ericngu97@gmail.com'
 git config --global credential.helper 'cache --timeout=3600'
+```
+Copy contents of id_rsa.pub and add to GitHub settings, then
+```
 git clone git://github.com/potateros/dotfiles.git ~/git/dotfiles/
 cd ~/git/dotfiles
 ```
 
-4. Install oh-my-zsh and copy `.zshrc` and `.vimrc` to `home`.
+### 4. Install oh-my-zsh and copy `.zshrc` and `.vimrc` to `home`.
 ```
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 mv ~/.zshrc ~/.zshrc.bak
@@ -134,27 +131,31 @@ mv ~/.vimrc ~/.vimrc.bak
 cp .zshrc .vimrc ~/
 ```
 
-5. Place `config` in `~/.config/i3/`
+### 5. Place `config` in `~/.config/i3/`
 ```
 mv ~/.config/i3/config ~/.config/i3/config.bak
 cp config ~/.config/i3/
 ```
+Remember to change the $home at the top of i3config file
 
-6. Unzip and place `apps.tar.gz` in `~/apps/`
+### 6. Unzip and place `apps.zip` in `~/apps/`
 ```
 mkdir ~/apps/
-tar -xvzf apps.tar.gz -C ~/apps/
+unzip apps.tar.gz -d ~/apps/
 ```
 
-7. Copy fonts
+### 7. Copy fonts
 ```
 cp .fonts/* ~/.fonts/
 ```
 
-8. Install Dropbox, VSCode, NodeJS, Anaconda
+### 8. Install Dropbox, VSCode, NodeJS, Anaconda, playerctl
 ```
 sudo chmod +x ~/apps/upedit.sh
 sudo ~/apps/upedit.sh
+
+wget https://github.com/acrisci/playerctl/releases/download/v0.5.0/playerctl-0.5.0_amd64.deb -O /tmp/playerctl.deb
+sudo dpkg -i /tmp/playerctl.deb
 
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -165,23 +166,22 @@ sudo chmod +x /tmp/anaconda.sh
 sudo /tmp/anaconda.sh
 ```
 
-9. Install snaps
+### 9. Install snaps
 ```
 sudo snap install atom --classic
-sudo snap install chromium --classic
-sudo snap install firefox --classic
+sudo snap install firefox --classic (if you want to...)
 sudo snap install intellij-idea-ultimate --classic
 sudo snap install slack --classic
-sudo snap install mailspring pencilsheep polarr skype spotify vlc
+sudo snap install chromium mailspring pencilsheep polarr skype spotify vlc
 ```
 
-10. Get wallpapers back
+### 10. Get wallpapers back
 - Download wallpapers and then
 ```
 unzip file.zip -d ~/Pictures/wallpapers/
 ```
 
-11. Restore VSCode settings
+### 11. Restore VSCode settings
 
 - `code --install-extension Shan.code-settings-sync`
 
@@ -193,6 +193,8 @@ unzip file.zip -d ~/Pictures/wallpapers/
 - Create a script that can automate most (if not all) of the processes above
 
 - Test on other ubuntu-based distros
+
+- Find a better screenshot tool
 
 ---
 ## Disclaimer

@@ -7,6 +7,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+set $home '/home/potateros'
 set $mod Mod4
 
 # Disables windows title bars
@@ -37,7 +38,7 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -padding 10 -opacity "50" -bw 0 -bc "$base01" -bg "$base03" -fg "$base07" -hlbg "$base05" -font "System San Francisco Display 10" -hlfg "#9575cd"
+bindsym $mod+d exec rofi -show run -padding 10 -opacity "50" -bw 0 -bc "$base01" -bg "$base03" -fg "$base07" -hlbg "$base05" -font "Ubuntu 10" -hlfg "#9575cd"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -248,7 +249,7 @@ bar {
         #status_command python /path/to/powerline/bindings/i3/powerline-i3.py
         #font pango:PowerlineFont 12
 
-        status_command i3blocks -c ~/apps/i3blocks/i3blocks.conf
+        status_command i3blocks -c $home/apps/i3blocks/i3blocks.conf
         font pango: System San Francisco Display, FontAwesome 9
         colors {
                 separator $base03
@@ -300,18 +301,18 @@ bindsym XF86MonBrightnessDown exec xbright -30 # decrease screen brightness
 # Printscreen
 #bindsym print exec scrot -e 'mv $f ~/Dropbox/Photos/Screenshots/'
 #bindsym $mod+print exec scrot -s -e 'mv $f ~/Dropbox/Photos/Screenshots/'
-bindsym Print exec maim ~/Dropbox/Photos/Screenshots/$(date +%s).png
-bindsym $mod+Print exec maim -s ~/Dropbox/Photos/Screenshots/$(date +%s).png
+bindsym Print exec maim /home/potateros/Dropbox/Photos/Screenshots/$(date +%s).png
+bindsym $mod+Print exec maim -s /home/potateros/Dropbox/Photos/Screenshots/$(date +%s).png
 
 # Power menu - allows user to lock, logout, sleep, hibernate, reboot, shutdown
 #   hibernate doesn't work on my machine, but YMMV
 bindsym $mod+shift+e mode "$mode_system"
-bindsym $mod+shift+x exec ~/apps/i3lock-fancy/lock -p -- scrot -z
+bindsym $mod+shift+x exec $home/apps/i3lock-fancy/lock -p -- scrot -z
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
 mode "$mode_system" {
 
-    bindsym l exec ~/apps/i3lock-fancy/lock -p -- scrot -z
+    bindsym l exec $home/apps/i3lock-fancy/lock -p -- scrot -z
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym h exec --no-startup-id systemctl hibernate, mode "default"
@@ -323,12 +324,11 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-exec_always feh --recursive --randomize --bg-fill "~/Pictures/Wallpapers/Wallpaperai"
+exec_always feh --recursive --randomize --bg-fill $home/Pictures/wallpapers
 #exec_always feh --bg-fill "~/Pictures/Wallpapers/Motivational/427408.jpg"
 exec_always compton -f
 exec_always --no-startup-id synclient HorizEdgeScroll=1 PalmDetect=1 TapButton3=2 ClickFinger3=2 TapButton2=3 ClickFinger2=3 VertScrollDelta=-40
 
 exec --no-startup-id nm-applet
-exec --no-startup-id classicmenu-indicator
 exec --no-startup-id gtk-redshift
-exec --no-startup-id ~/.dropbox-dist/dropboxd
+exec --no-startup-id /home/potateros/.dropbox-dist/dropboxd
