@@ -7,7 +7,18 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $home '/home/potateros'
+##########################################
+##  REMEMBER TO CHANGE THE STUFF BELOW  ##
+##########################################
+set $home /home/potateros
+
+# Path to volume control, without trailing slash
+set $volumepath /home/potateros/apps/volume
+
+##########################################
+##  REMEMBER TO CHANGE THE STUFF ABOVE  ##
+##########################################
+
 set $mod Mod4
 
 # Disables windows title bars
@@ -265,9 +276,6 @@ bar {
 
 ## Volume control
 
-# Path to volume control, without trailing slash
-set $volumepath ~/apps/i3-volume
-
 # Command for the status line (used with -t, must also use -u) (i3blocks, i3status)
 set $statuscmd i3blocks
 
@@ -301,8 +309,8 @@ bindsym XF86MonBrightnessDown exec xbright -30 # decrease screen brightness
 # Printscreen
 #bindsym print exec scrot -e 'mv $f ~/Dropbox/Photos/Screenshots/'
 #bindsym $mod+print exec scrot -s -e 'mv $f ~/Dropbox/Photos/Screenshots/'
-bindsym Print exec maim /home/potateros/Dropbox/Photos/Screenshots/$(date +%s).png
-bindsym $mod+Print exec maim -s /home/potateros/Dropbox/Photos/Screenshots/$(date +%s).png
+bindsym Print exec maim $home/Dropbox/Photos/Screenshots/$(date +%s).png
+bindsym $mod+Print exec maim -s $homeE/Dropbox/Photos/Screenshots/$(date +%s).png
 
 # Power menu - allows user to lock, logout, sleep, hibernate, reboot, shutdown
 #   hibernate doesn't work on my machine, but YMMV
@@ -331,4 +339,4 @@ exec_always --no-startup-id synclient HorizEdgeScroll=1 PalmDetect=1 TapButton3=
 
 exec --no-startup-id nm-applet
 exec --no-startup-id gtk-redshift
-exec --no-startup-id /home/potateros/.dropbox-dist/dropboxd
+exec --no-startup-id $home/.dropbox-dist/dropboxd
