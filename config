@@ -111,12 +111,15 @@ set $wksp1 "1 "
 set $wksp2 "2 "
 set $wksp3 "3 "
 set $wksp4 "4 "
-set $wksp5 "5 "
-set $wksp6 "6 "
-set $wksp7 "7 "
-set $wksp8 "8 "
-set $wksp9 "9 "
-set $wksp10 "10 "
+set $wksp5 "5 "
+set $wksp6 "6 "
+set $wksp7 "7 "
+set $wksp8 "8 "
+set $wksp9 "9 "
+set $wksp10 "10 "
+set $wkslack "S"
+set $wkspotify "S"
+
 set $wksp11 "11"
 set $wksp12 "12"
 set $wksp13 "13"
@@ -152,6 +155,8 @@ bindsym $mod+7 workspace $wksp7
 bindsym $mod+8 workspace $wksp8
 bindsym $mod+9 workspace $wksp9
 bindsym $mod+0 workspace $wksp10
+bindsym $mod+minus workspace $wkslack
+bindsym $mod+equal workspace $wkspotify
 
 bindsym $mod+Ctrl+1 workspace $wksp11
 bindsym $mod+Ctrl+2 workspace $wksp12
@@ -175,6 +180,8 @@ bindsym $mod+Shift+7 move container to workspace $wksp7
 bindsym $mod+Shift+8 move container to workspace $wksp8
 bindsym $mod+Shift+9 move container to workspace $wksp9
 bindsym $mod+Shift+0 move container to workspace $wksp10
+bindsym $mod+Shift+minus move container to workspace $wkslack
+bindsym $mod+Shift+equal move container to workspace $wkspotify
 
 bindsym $mod+Shift+Ctrl+1 move container to workspace $wksp11
 bindsym $mod+Shift+Ctrl+2 move container to workspace $wksp12
@@ -338,5 +345,5 @@ exec_always compton -f
 exec_always --no-startup-id synclient HorizEdgeScroll=1 PalmDetect=1 TapButton3=2 ClickFinger3=2 TapButton2=3 ClickFinger2=3 VertScrollDelta=-40
 
 exec --no-startup-id nm-applet
-exec --no-startup-id gtk-redshift
+exec --no-startup-id redshift-gtk
 exec --no-startup-id $home/.dropbox-dist/dropboxd

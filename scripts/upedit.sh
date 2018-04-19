@@ -11,8 +11,8 @@ fi
 
 wget https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable -O /tmp/code_latest_amd64.deb
 # wget https://atom.io/download/deb -O /tmp/atomio.deb
-wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb -O /tmp/dropbox.deb
+# wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb -O /tmp/dropbox.deb
 
 sudo dpkg -i /tmp/code_latest_amd64.deb
 # sudo dpkg -i /tmp/atomio.deb
-sudo dpkg -i /tmp/dropbox.deb
+# sudo dpkg -i /tmp/dropbox.deb

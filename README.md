@@ -149,18 +149,36 @@ unzip apps.tar.gz -d ~/apps/
 cp .fonts/* ~/.fonts/
 ```
 
-### 8. Install Dropbox, VSCode, NodeJS, Anaconda, playerctl
+### 8. Install Dropbox, VSCode, NodeJS, Anaconda, playerctl, virtualenv, ruby rvm
 ```
+# VSCode
 sudo chmod +x ~/apps/upedit.sh
 sudo ~/apps/upedit.sh
 
+# Dropbox
+wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb -O /tmp/dropbox.deb
+sudo dpkg -i /tmp/dropbox.deb
+
+# playerctl
 wget https://github.com/acrisci/playerctl/releases/download/v0.5.0/playerctl-0.5.0_amd64.deb -O /tmp/playerctl.deb
 sudo dpkg -i /tmp/playerctl.deb
 
+# nodejs
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential
 
+# rvm & ruby
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl -sSL https://get.rvm.io -o rvm.sh
+cat rvm.sh | bash -s stable
+rvm install ruby --default
+
+# virtualenv
+sudo apt-get install python3-pip
+pip3 install virtualenv
+
+# anaconda
 wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh -O /tmp/anaconda.sh
 sudo chmod +x /tmp/anaconda.sh
 sudo /tmp/anaconda.sh
