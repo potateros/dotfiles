@@ -119,8 +119,8 @@ sudo apt-get install i3 i3blocks rofi feh vim zsh curl git compton scrot lxappea
 
 ```bash
 cd .ssh && ssh-keygen
-git config --global user.name 'potateros'
-git config --global user.email 'ericngu97@gmail.com'
+git config --global user.name 'username'
+git config --global user.email 'email'
 git config --global credential.helper 'cache --timeout=3600'
 ```
 Copy contents of id_rsa.pub and add to GitHub settings, then
