@@ -84,12 +84,38 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# PATH
 PATH=$PATH:~/.local/bin
-PATH=$PATH:~/.local/bin
+PATH=$PATH:/home/potateros/bin
+PATH=$PATH:~/.rvm/gems/ruby-2.4.1/bin
 
 # custom alias
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias i3conf="vim ~/.config/i3/config"
+#alias rmdir="trash"
+#alias virenvwra="virtualenvwrapper"
+#alias fucking="sudo"
+#alias git add --all && git commit -m "quick commit" && git push = gitquick
+alias py="python3"
 
+# CPU Governor
+function setgov ()
+{
+    echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+}
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export GPG_TTY=$(tty)
+export JAVA_HOME=/home/potateros/apps/jdk-10
+export PATH=$JAVA_HOME/bin:$PATH
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+# source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /home/potateros/git/coffitivity-offline/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/potateros/git/coffitivity-offline/node_modules/tabtab/.completions/electron-forge.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
