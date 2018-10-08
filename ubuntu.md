@@ -108,8 +108,8 @@ sudo apt-get install vim zsh curl git compton lxappearance arc-theme ubuntu-rest
 
 ```bash
 cd .ssh && ssh-keygen
-git config --global user.name 'potateros'
-git config --global user.email 'ericngu97@gmail.com'
+git config --global user.name 'username'
+git config --global user.email 'email'
 git config --global credential.helper 'cache --timeout=3600'
 ```
 
