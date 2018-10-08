@@ -61,6 +61,8 @@ gnome-tweak-tool
 
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
+- [bat](https://github.com/sharkdp/bat)
+
 `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
 ---
@@ -105,6 +107,6 @@ Use `sudo snap install [package-name]` for these following apps:
 
 ## Disclaimer
 
-__Remember to change the git configurations to reflect your username and email!__
+**Remember to change the git configurations to reflect your username and email!**
 
 I've used this on my laptop, but I cannot guarantee it will work on yours. Please don't hate me if it doesn't. Please do let me know if it does though. Thanks ♥

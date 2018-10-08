@@ -142,7 +142,7 @@ unzip apps.tar.gz -d ~/apps/
 cp .fonts/* ~/.fonts/
 ```
 
-### 7. Install Dropbox, VSCode, NodeJS, Anaconda, playerctl, virtualenv, ruby rvm
+### 7. Install Dropbox, VSCode, NodeJS, Anaconda, playerctl, virtualenv, ruby rvm, Oralce Java10
 
 ```bash
 # VSCode
@@ -177,6 +177,11 @@ wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh -O /tmp/a
 sudo chmod +x /tmp/anaconda.sh
 sudo /tmp/anaconda.sh
 ```
+# Oracle Java 10
+sudo add-apt-repository ppa:linuxuprising/java
+sudo apt update
+sudo apt install oracle-java10-installer
+sudo apt install oracle-java10-set-default
 
 ### 8. Install snaps
 
