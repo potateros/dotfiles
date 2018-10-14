@@ -22,7 +22,7 @@ sudo chown -R potateros:potateros /home/potateros/Downloads/temp
 # apt-get
 sudo apt update
 sudo apt upgrade
-sudo apt -y install git vim ranger htop curl zsh lxappearance arc-theme dconf-tools plank gnome-tweaks chrome-gnome-shell kdeconnect
+sudo apt -y install git vim ranger htop curl zsh lxappearance arc-theme dconf-tools plank gnome-tweaks chrome-gnome-shell kdeconnect autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
 
 # theme
 sudo add-apt-repository ppa:snwh/ppa
@@ -97,15 +97,24 @@ cp -r /home/potateros/Downloads/temp/dotfiles-master/.fonts /home/potateros/
 git config --global credential.helper 'cache --timeout=3600'
 
 # nvm & nodejs
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-nvm install node
-nvm use node
+#wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+#nvm install node
+#nvm use node
 
-# rvm and ruby
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-curl -sSL https://get.rvm.io -o rvm.sh
-cat rvm.sh | bash -s stable
-rvm install ruby --default
+# nodejs
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs build-essential
+npm config set prefix ~/.local  
+
+# rbenv and ruby
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+rbenv install 2.5.1
+rbenv global 2.5.1
+echo "gem: --no-document" > ~/.gemrc # turns off local docs
+gem install bundler # classic
+gem install rails
+rbenv rehash
 
 # virtualenv pip python and anaconda
 sudo apt-get install python3-pip
