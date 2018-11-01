@@ -146,7 +146,7 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# added by Anaconda3 installer
-export PATH="/home/potateros/anaconda3/bin:$PATH"
+# miniconda3
+export PATH="/home/potateros/miniconda3/bin:$PATH"
 
 #zprof

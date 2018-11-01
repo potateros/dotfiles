@@ -117,11 +117,11 @@ gem install rails
 rbenv rehash
 
 # virtualenv pip python and anaconda
-sudo apt-get install python3-pip
-pip3 install virtualenv
-wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh -O /home/potateros/Downloads/temp/anaconda.sh
-sudo chmod +x /home/potateros/Downloads/temp/anaconda.sh
-sudo /home/potateros/Downloads/temp/anaconda.sh
+wget https://repo.continuum.io/miniconda/Miniconda3-4.5.11-Linux-x86_64.sh -O /home/potateros/Downloads/temp/miniconda.sh
+sudo chmod +x /home/potateros/Downloads/temp/miniconda.sh
+sudo /home/potateros/Downloads/temp/miniconda.sh
+source /home/potateros/.zshrc
+pip install virtualenv
 
 # oracle java 10
 sudo add-apt-repository ppa:linuxuprising/java
@@ -150,3 +150,5 @@ firefox https://extensions.gnome.org/extension/1236/noannoyance/
 firefox https://extensions.gnome.org/extension/7/removable-drive-menu/
 firefox https://extensions.gnome.org/extension/750/openweather/
 firefox https://extensions.gnome.org/extension/8/places-status-indicator/
+firefox https://extensions.gnome.org/extension/1080/transparent-notification/
+firefox https://extensions.gnome.org/extension/1073/transparent-osd/
