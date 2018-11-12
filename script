@@ -141,6 +141,8 @@ sudo chown -R potateros:potateros /home/potateros/.oh-my-zsh
 
 chsh -s $(which zsh)
 
+# install k for zsh
+git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
 
 firefox https://extensions.gnome.org/
 firefox https://extensions.gnome.org/extension/21/workspace-indicator/

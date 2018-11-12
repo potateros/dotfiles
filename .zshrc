@@ -53,7 +53,7 @@ ZSH_THEME="arrow"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git k)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,10 +97,9 @@ alias ...="cd ../../"
 alias ....="cd ../../../"
 alias i3conf="vim ~/.config/i3/config"
 alias trash="gio trash"
-#alias virenvwra="virtualenvwrapper"
-#alias fucking="sudo"
-#alias git add --all && git commit -m "quick commit" && git push = gitquick
 alias py="python3"
+alias la="k"
+alias l="k"
 
 # CPU Governor
 function setgov ()
