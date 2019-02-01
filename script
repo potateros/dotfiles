@@ -72,15 +72,19 @@ wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5
 sudo dpkg -i /home/potateros/Downloads/temp/franz.deb
 
 # snaps
-sudo snap install vscode --classic
+sudo snap set system refresh.retain=2 
+#sudo snap install vscode --classic
 sudo snap install intellij-idea-ultimate --classic
 sudo snap install slack --classic
 sudo snap install android-studio --classic
 sudo snap install sublime-text --classic
-sudo snap install arduino-mhall119
+#sudo snap install arduino-mhall119
 sudo snap install telegram-desktop
 sudo snap install spotify
 sudo snap install vlc
+sudo snap install docker
+
+sudo usermod -a -G docker potateros
 
 # github dotfiles
 git clone https://github.com/potateros/dotfiles /home/potateros/Downloads/dotfiles-master/
