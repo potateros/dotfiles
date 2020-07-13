@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source ~/git/apps/spyder/spyder/bin/activate
+cd ~/git/apps/spyder
+./bootstrap.py

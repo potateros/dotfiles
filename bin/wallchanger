@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm /home/potateros/Pictures/current-wallpaper/wallpaper.jpg
+shuf -n 1 -e /home/potateros/Pictures/Wallpapers/* | xargs -i cp -r {} /home/potateros/Pictures/current-wallpaper/wallpaper.jpg
+gsettings set org.gnome.desktop.background picture-uri "file:///home/potateros/Pictures/current-wallpaper/wallpaper.jpg"
