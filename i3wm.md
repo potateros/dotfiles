@@ -1,4 +1,6 @@
-# dotfiles
+# i3wm
+
+(Outdated, definitely doesn't work properly. Proceed with caution)
 
 Configuration files for my Ubuntu install
 
