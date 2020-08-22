@@ -1,4 +1,6 @@
-# dotfiles
+# Ubuntu 18.04
+
+last updated somewhere in 2018
 
 Configuration files for my Ubuntu install
 

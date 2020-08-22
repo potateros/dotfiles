@@ -4,6 +4,7 @@ set shiftround      " rounds indent to nearest multiple
 set shiftwidth=2    " shifting tab spaces
 set smarttab        " insert tabstop spaces when tabbing
 set tabstop=2       " indent size
+set autoindent      " copy indent from current line to next
 
 " Search
 "set hlsearch        " search highlighting

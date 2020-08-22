@@ -1,6 +1,8 @@
-# i3wm
+# i3wm on Ubuntu 17.04
 
-(Outdated, definitely doesn't work properly. Proceed with caution)
+*last updated somewhere in 2018*
+
+*(Outdated, definitely doesn't work properly. Proceed with caution)*
 
 Configuration files for my Ubuntu install
 
