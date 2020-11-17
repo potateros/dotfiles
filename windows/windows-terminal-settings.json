@@ -1,0 +1,108 @@
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+    "copyOnSelect": false,
+    "copyFormatting": false,
+    "profiles":
+    {
+        "defaults":
+        {
+            "fontFace": "Cascadia Code",
+            "fontSize": 10,
+            "colorScheme": "Dracula"
+        },
+        "list":
+        [
+            {
+                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "hidden": false,
+                "name": "Ubuntu WSL",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "//wsl$/Ubuntu-20.04/home/potateros/"
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "name": "PowerShell",
+                "commandline": "powershell.exe",
+                "hidden": false
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "name": "Command Prompt",
+                "commandline": "cmd.exe",
+                "hidden": false
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": true,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            }
+        ]
+    },
+    "schemes": [
+        {
+            "name" : "Dracula",
+            "background" : "#282A36",
+            "black" : "#21222C",
+            "blue" : "#BD93F9",
+            "brightBlack" : "#6272A4",
+            "brightBlue" : "#D6ACFF",
+            "brightCyan" : "#A4FFFF",
+            "brightGreen" : "#69FF94",
+            "brightPurple" : "#FF92DF",
+            "brightRed" : "#FF6E6E",
+            "brightWhite" : "#FFFFFF",
+            "brightYellow" : "#FFFFA5",
+            "cyan" : "#8BE9FD",
+            "foreground" : "#F8F8F2",
+            "green" : "#50FA7B",
+            "purple" : "#FF79C6",
+            "red" : "#FF5555",
+            "white" : "#F8F8F2",
+            "yellow" : "#F1FA8C"
+        }
+    ],
+    "actions":
+    [
+        {
+            "command": {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },{
+            "command": "paste",
+            "keys": "ctrl+v"
+        },{
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },{
+            "command": "closePane",
+            "keys": "ctrl+w"
+        },{
+            "command": "newTab",
+            "keys":  "ctrl+t"
+        },{
+            "command": "nextTab",
+            "keys": "ctrl+tab"
+        },{
+            "command": "prevTab",
+            "keys": "ctrl+shift+tab"
+        },{
+            "command": {
+                "action": "splitPane",
+                "split": "vertical",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+d"
+        },{
+            "command": {
+                "action": "splitPane",
+                "split": "horizontal",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        },
+    ]
+}
