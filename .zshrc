@@ -1,45 +1,59 @@
+##### zshrc for both linux and macOS
+# comment out as needed
+
 export ZSH="/home/potateros/.oh-my-zsh"
-ZSH_THEME="arrow"
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-# CASE_SENSITIVE="true"
-# HYPHEN_INSENSITIVE="true"
-# DISABLE_AUTO_UPDATE="true"
-# DISABLE_UPDATE_PROMPT="true"
-export UPDATE_ZSH_DAYS=30
-# DISABLE_MAGIC_FUNCTIONS=true
-# DISABLE_AUTO_TITLE="true"
-# ENABLE_CORRECTION="true"
+source $ZSH/oh-my-zsh.sh
+ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-# HIST_STAMPS="mm/dd/yyyy"
-# ZSH_CUSTOM=/path/to/new-custom-folder
-plugins=(git k)
+
+plugins=(git zsh-autosuggestions)
+
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+###### User configuration
 
 GPG_TTY=$(tty)
 export GPG_TTY
 
+# aliases
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
-alias ls="ls -F"
-alias l="k -h -a"
+
+alias l="exa --one-line"
+alias ls="exa --long --classify --group-directories-first"
+alias la="exa --long --classify --all"
+alias lt="exa --long --classify --tree --level 2"
+alias lsize="exa --long --classify --sort size --reverse"
+
 alias mkcd="mkdir $1 && cd $1"
 
-alias py="python3"
+# functions
+function gi() { curl -L -s https://www.gitignore.io/api/$0 ;} # generates gitignore files from that website
 
-# Golang
+# PATHs
+
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-# Loads NVM
-export NVM_DIR="/Users/chngu/.nvm"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+##### Linux-only lines (tested on Ubuntu)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # homebrew
+  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
 
-# Generates gitingore file
-function gi() { curl -L -s https://www.gitignore.io/api/$0 ;}
+##### macOS-only lines
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  #Loads postgresql@12 installed by homebrew (v12 for compatibility)
+  export PATH="$PATH:/usr/local/opt/postgresql@12/bin"
+fi
+
+##### hubb-specific
+alias hubb="cd /home/potateros/git/"
+alias kubetoken="aws eks get-token --cluster-name=eks-prod-cluster | jq .status.token | sed 's/\"//g' | clip.exe"
