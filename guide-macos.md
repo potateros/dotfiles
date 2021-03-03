@@ -39,7 +39,7 @@ yarn
 `brew cask install`
 
 ```bash
-brew cask install \
+brew install --cask \
 docker \
 evernote \
 figma \
@@ -62,4 +62,4 @@ turbo-boost-switcher \
 vlc
 ```
 
-Then, set up ZSH and env stuff in [guide-sh.md](guide-sh.md)
+Then, set up ZSH and env stuff in [./guide-post.md](guide-post.md)
