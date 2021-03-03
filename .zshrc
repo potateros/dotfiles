@@ -1,10 +1,11 @@
 ##### zshrc for both linux and macOS
 # comment out as needed
 
-export ZSH="/home/potateros/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
+ZSH_DISABLE_COMPFIX=true
 
 plugins=(git zsh-autosuggestions)
 
@@ -43,7 +44,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 ##### Linux-only lines (tested on Ubuntu)
-if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # homebrew
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
@@ -55,5 +56,5 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 ##### hubb-specific
-alias hubb="cd /home/potateros/git/"
+alias hubb="cd $HOME/git/"
 alias kubetoken="aws eks get-token --cluster-name=eks-prod-cluster | jq .status.token | sed 's/\"//g' | clip.exe"
