@@ -1,11 +1,11 @@
 ##### zshrc for both linux and macOS
 # comment out as needed
+ZSH_DISABLE_COMPFIX="true"
 
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
-ZSH_DISABLE_COMPFIX=true
 
 plugins=(git zsh-autosuggestions)
 
