@@ -12,7 +12,7 @@
 # 2. Update the value of API_KEY below with a valid RescueTime API key.
 #    [ you can generate a key at https://www.rescuetime.com/anapi/manage ]
 
-API_KEY=B638Ap5lKfg7cdmhgxeq959X9kh4MbExxqfBnHR1
+API_KEY=$API_KEY_RESCUETIME_GIT
 
 FOLDER_NAME=$(basename "$PWD")
 COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)

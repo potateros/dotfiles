@@ -75,3 +75,6 @@ fi
 #source /home/potateros/.config/broot/launcher/bash/br
 export PATH="/home/linuxbrew/.linuxbrew/opt/imagemagick@6/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
+
+# Env keys
+API_KEY_RESCUETIME_GIT=

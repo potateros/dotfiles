@@ -16,7 +16,7 @@
 if [ -x ./.git/hooks/post-commit ]; then
     ./.git/hooks/post-commit
 else
-  API_KEY=B638Ap5lKfg7cdmhgxeq959X9kh4MbExxqfBnHR1
+  API_KEY=$API_KEY_RESCUETIME_GIT
 
   FOLDER_NAME=$(basename "$PWD")
   COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)
