@@ -1,0 +1,5 @@
+[user]
+    email = cheehongngu@gmail.com
+    name = potateros
+[core]
+    hooksPath = ~/git/potateros/dotfiles-private/git-defaults/hooks

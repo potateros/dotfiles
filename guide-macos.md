@@ -20,6 +20,7 @@ Commands for macOS-specific install
 brew install \
 bat \
 coreutils \
+deno \
 derailed/k9s/k9s \
 firebase-cli \
 gnupg \
@@ -33,13 +34,13 @@ ranger \
 redis \
 tldr \
 wget \
-yarn
+yarn \
 ```
 
 `brew cask install`
 
 ```bash
-brew install --cask \
+brew cask install \
 docker \
 evernote \
 figma \
@@ -48,8 +49,11 @@ franz \
 gitkraken \
 google-chrome \
 iterm2 \
+jetbrains-toolbox \
 libreoffice \
 macs-fan-control \
+ngrok \
+notion \
 openvpn-connect \
 pock \
 postman \
@@ -57,9 +61,11 @@ rescuetime \
 rubymine \
 slack \
 spotify \
+teamspeak-client \
 tiles \
 turbo-boost-switcher \
-vlc
+vlc \
+zoomus \
 ```
 
-Then, set up ZSH and env stuff in [./guide-post.md](guide-post.md)
+Then, set up ZSH and env stuff in [guide-sh.md](guide-sh.md)

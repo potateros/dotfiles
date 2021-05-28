@@ -81,12 +81,81 @@ to you. Install Homebrew by running this command in your WSL terminal.
 
 You should have the `brew` command installed now.
 
-## Brew
+### Installing Ruby Version Manager (RVM)
+
+The instructions below are from the rvm [website](http://rvm.io/).
+
+- Install GPG keys:
+    ```
+    gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+    ```
+- Install RVM:
+    ```
+    \curl -sSL https://get.rvm.io | bash -s stable
+    ```
+- For installing RVM with default Ruby and Rails in one command, run:
+    ```
+    \curl -sSL https://get.rvm.io | bash -s stable --rails
+    ```
+
+### Installing Node Version Manager (NVM)
+
+The instructions are from the NVM [GitHub repository](https://github.com/nvm-sh/nvm)
+
+1. Run the NVM install script
+    ```
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+    ```
+2. Add NVM to your `.zshrc`
+    ```
+    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    ```
+
+Restart your terminal, or open a new one, then run `nvm -v`. If it works, you have
+NVM installed.
+
+If you have any issues, check out the [NVM repository](https://github.com/nvm-sh/nvm).
+
+### Installing Golang binaries
+
+Get the latest Golang binaries *for Linux* from the [website](https://golang.org/dl/).
+
+Then, `cd` to where you have downloaded the Golang `.tar.gz` file. Make sure it
+is for Linux.
+
+If you have a previous version of Go installed, be sure to remove it before installing another.
+
+1. Download the archive and extract it into /usr/local, creating a Go tree in /usr/local/go. For example, run the following as root or through sudo:
+    ```
+    tar -C /usr/local -xzf go1.15.5.linux-amd64.tar.gz
+    ```
+2. Add /usr/local/go/bin to the PATH environment variable. You can do this by adding the following line to your $HOME/.profile or /etc/profile (for a system-wide installation):
+    ```
+    export PATH=$PATH:/usr/local/go/bin
+    ```
+    Note: Changes made to a profile file may not apply until the next time you log into your computer. To apply the changes immediately, just run the shell commands directly or execute them from the profile using a command such as source $HOME/.profile.
+
+3. Verify that you've installed Go by opening a command prompt and typing the following command: `go version`
+4. Confirm that the command prints the installed version of Go.
+
+
+
+## Setting Up the Rest of Windows
+
+Now that a minimal dev environment has been set up, it's time to install the
+remaining applications and tools to ramp up your Windows install to a full
+productive environment.
+
+### Brew
+
+`brew install`
 
 ```bash
 brew install \
 bat \
 coreutils \
+deno \
 derailed/k9s/k9s \
 firebase-cli \
 gnupg \
@@ -95,16 +164,43 @@ htop \
 imagemagick \
 kubernetes-cli \
 nvm \
+postgresql \
 ranger \
+redis \
 tldr \
 wget \
-yarn
+yarn \
 ```
-## Setting Up the Rest of Windows
 
-Now that a minimal dev environment has been set up, it's time to install the
-remaining applications and tools to ramp up your Windows install to a full
-productive environment.
+`brew cask install`
 
+```bash
+brew cask install \
+docker \
+evernote \
+figma \
+firefox \
+franz \
+gitkraken \
+google-chrome \
+iterm2 \
+jetbrains-toolbox \
+libreoffice \
+macs-fan-control \
+ngrok \
+notion \
+openvpn-connect \
+pock \
+postman \
+rescuetime \
+rubymine \
+slack \
+spotify \
+teamspeak-client \
+tiles \
+turbo-boost-switcher \
+vlc \
+zoomus \
+```
 
-Then, set up ZSH and env stuff in [./guide-post.md](guide-post.md)
+Then, set up ZSH and env stuff in [guide-sh.md](guide-sh.md)
