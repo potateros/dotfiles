@@ -1,7 +1,7 @@
 ##### zshrc for both linux and macOS
 # comment out as needed
 
-export ZSH="/home/potateros/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git zsh-autosuggestions)
@@ -13,7 +13,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # homebrew
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
-
 ##### macOS-only lines
 if [[ "$OSTYPE" == "darwin"* ]]; then
   #Loads postgresql@12 installed by homebrew (v12 for compatibility)
@@ -55,15 +54,25 @@ function gi() { curl -L -s https://www.gitignore.io/api/$0 ;} # generates gitign
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+##### Linux-only lines (tested on Ubuntu)
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  #source /home/potateros/.config/broot/launcher/bash/br
+  export PATH="/home/linuxbrew/.linuxbrew/opt/imagemagick@6/bin:$PATH"
+  PATH="$HOME/.local/bin:$PATH"
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+
+  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+else [[ "$OSTYPE" == "darwin"* ]];
+  export PATH="$PATH:$HOME/.rvm/bin"
+fi
+
 
 ##### Hubble-specific
-#alias hubb=
-#HUBBLE_CLUSTER_NAME=
+alias hubb=
+HUBBLE_CLUSTER_NAME=
 
 # For WSL or macOS (main dev envs)
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -71,10 +80,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   alias kubetoken="aws eks get-token --cluster-name=${HUBBLE_CLUSTER_NAME} | jq .status.token | sed 's/\"//g' | pbcopy"
 fi
-
-#source /home/potateros/.config/broot/launcher/bash/br
-export PATH="/home/linuxbrew/.linuxbrew/opt/imagemagick@6/bin:$PATH"
-PATH="$HOME/.local/bin:$PATH"
 
 # Env keys
 API_KEY_RESCUETIME_GIT=
