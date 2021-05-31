@@ -1,7 +1,9 @@
 [user]
-	email = cheehongngu@gmail.com
+  email = cheehongngu@gmail.com
   name = Chee Hong Ngu
 [core]
   hooksPath = ~/git/potateros/dotfiles-private/git-defaults/hooks
 [alias]
   l  = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --
+[pull]
+  ff = only
