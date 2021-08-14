@@ -3,6 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git zsh-autosuggestions)
+ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
 
@@ -45,6 +46,15 @@ function loopdir () { find . -maxdepth 1 -type d \( ! -name . \) -exec zsh -c "c
 ## make directory then cd in
 function mcd() { mkdir -p $1 && cd $1 }
 
+# change mac address for unlimited limited wifi
+function changeMac() {
+  local mac=$(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//')
+  sudo ifconfig en0 ether $mac
+  sudo ifconfig en0 down
+  sudo ifconfig en0 up
+  echo "Your new physical address is $mac"
+}
+
 ########## PATHs #####
 export GPG_TTY=$(tty)
 export GOPATH=$HOME/go
@@ -64,7 +74,7 @@ else [[ "$OSTYPE" == "darwin"* ]];
 fi
 
 ########## Secrets
-alias hubb=
+alias hubb=$HOME/git/
 export API_KEY_RESCUETIME_GIT=
 HUBBLE_CLUSTER_NAME=
 
