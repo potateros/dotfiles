@@ -6,6 +6,7 @@ plugins=(git zsh-autosuggestions)
 ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
+ssh-add ~/.ssh/id_ed25519
 
 ## Linux-only initialization (tested on WSL2 Ubuntu)
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -74,9 +75,7 @@ else [[ "$OSTYPE" == "darwin"* ]];
 fi
 
 ########## Secrets
-alias hubb=$HOME/git/
 export API_KEY_RESCUETIME_GIT=
-HUBBLE_CLUSTER_NAME=
 
 ########## Hubble-specific #####
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
