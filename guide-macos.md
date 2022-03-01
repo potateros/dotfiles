@@ -27,11 +27,13 @@ gnupg \
 golang \
 htop \
 imagemagick \
+jenv \
 kubernetes-cli \
 nvm \
 postgresql \
 ranger \
 redis \
+rvm \
 tldr \
 wget \
 yarn \
@@ -48,8 +50,8 @@ firefox \
 franz \
 gitkraken \
 google-chrome \
+intellij-idea \
 iterm2 \
-jetbrains-toolbox \
 libreoffice \
 macs-fan-control \
 ngrok \
