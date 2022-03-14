@@ -39,27 +39,28 @@ brew install ranger
 brew install rvm
 brew install tldr
 brew install wget
-brew cask install docker
-brew cask install evernote
-brew cask install figma
-brew cask install firefox
-brew cask install gitkraken
-brew cask install google-chrome
-# brew cask install intellij-idea
-brew cask install iterm2
-brew cask install libreoffice
-brew cask install macs-fan-control
-# brew cask install ngrok
-# brew cask install notion
-# brew cask install openvpn-connect
-# brew cask install pock
-brew cask install postman
-brew cask install rescuetime
-# brew cask install rubymine
-brew cask install slack
-brew cask install spotify
-brew cask install teamspeak-client
-brew cask install tiles
-brew cask install turbo-boost-switcher
-brew cask install vlc
-# brew cask install zoomus
+brew install --cask dbeaver-community
+brew install --cask  docker
+brew install --cask  evernote
+brew install --cask figma
+brew install --cask firefox
+brew install --cask gitkraken
+brew install --cask google-chrome
+# brew install --cask intellij-idea
+brew install --cask iterm2
+brew install --cask libreoffice
+brew install --cask macs-fan-control
+# brew install --cask ngrok
+# brew install --cask notion
+# brew install --cask openvpn-connect
+# brew install --cask pock
+brew install --cask postman
+brew install --cask rescuetime
+# brew install --cask rubymine
+brew install --cask slack
+brew install --cask spotify
+brew install --cask teamspeak-client
+brew install --cask tiles
+brew install --cask turbo-boost-switcher
+brew install --cask vlc
+# brew install --cask zoomus
