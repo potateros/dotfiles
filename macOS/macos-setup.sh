@@ -51,11 +51,16 @@ brew install ranger
 # brew install rvm
 brew install tldr
 brew install wget
-# brew install --cask dbeaver-community
 brew install --cask aldente
+brew install --cask android-studio
 brew install --cask anydesk
 brew install --cask arc
-brew install --cask docker
+# brew install --cask betterdisplay
+# brew install --cask boop
+brew install --cask caffeine
+brew install --cask calibre
+# brew install --cask dbeaver-community
+# brew install --cask docker
 brew install --cask evernote
 # brew install --cask figma
 brew install --cask firefox
@@ -64,12 +69,17 @@ brew install --cask google-chrome
 # brew install --cask intellij-idea
 brew install --cask iterm2
 brew install --cask itsycal
+brew install --cask keka
 # brew install --cask libreoffice
 brew install --cask linearmouse
+brew install --cask logitech-g-hub
 brew install --cask macs-fan-control
+brew install --cask mongodb-compass
 # brew install --cask ngrok
+brew install --cask onedrive
 brew install --cask orbstack
 # brew install --cask openvpn-connect
+brew install --cask paragon-ntfs
 # brew install --cask pock
 brew install --cask postman
 brew install --cask raycast
@@ -86,3 +96,5 @@ brew install --cask tiles
 brew install --cask visual-studio-code
 brew install --cask vlc
 # brew install --cask zoomus
+
+wget https://freefilesync.org/download/FreeFileSync_13.3_macOS.zip
