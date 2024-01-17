@@ -33,6 +33,8 @@ alias la="exa --long --classify --all"
 alias lt="exa --long --classify --tree --level 2"
 alias lsize="exa --long --classify --sort size --reverse"
 
+alias backupExt="rsync -artv --progress -u /Volumes/1TB /Volumes/2TB/1TB | tee log_\$(date +%Y-%m-%d).txt"
+
 ###make directory then cd in
 function mkcd() { mkdir -p $1 && cd $1 }
 
@@ -62,6 +64,16 @@ alias git_prune="git fetch --prune && git branch -vv | grep 'origin/.*: gone]' |
 function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$1 ;}
 ###goes into each directory (of depth 1) and deletes all local branches with deleted remotes
 function loopdir () { find . -maxdepth 1 -type d \( ! -name . \) -exec zsh -c "cd '{}' && $1" \;}
+alias gitconfigpersonal='git config --local user.name "potateros" && git config --local user.email "cheehongngu@gmail.com"'
+alias gitamendpersonal='git commit --amend --no-edit --reset-author'
+
+########## Docker helpers
+###kill all exited containers
+##alias dockerkillall=docker rm $(docker ps --filter status=exited -q)
+##alias dockerrun="docker run -d -p 8080:8080 $(docker images -aq | head -n 1)"
+##alias dockerlog="docker logs $(docker ps -aq | head -n 1)"
+##alias dockerkill="docker rm -vf $(docker ps -aq | head -n 1) && docker rmi -f $(docker images -aq | head -n 1)"
+##alias dockerexec="docker exec -it $(docker ps -aq | head -n 1) bash"
 
 ########## Node-specific
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -82,7 +94,13 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 alias mvncompile="mvn clean compile && mvn package"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.jenv/bin:$PATH"
 
+########## dotnet
+export PATH="$PATH:/Users/chngu/.dotnet/tools"
+
+function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
 ########## Postgres-specific
 ###Loads postgresql@12 installed by homebrew (v12 for compatibility)
 # export PATH="$PATH:/usr/local/opt/postgresql@12/bin"
@@ -100,7 +118,31 @@ alias mvncompile="mvn clean compile && mvn package"
 #   alias kubetoken="aws eks get-token --cluster-name=${HUBBLE_CLUSTER_NAME} | jq .status.token | sed 's/\"//g' | pbcopy"
 # fi
 
+########## ZilLearn-specific ####
+alias zcoremodelcompile="cd ~/Developer/zillearn/microservices/models && mvn clean compile && mvn install"
+alias kubetokendev="aws eks get-token --cluster-name=tech-sg-cluster --profile EksDevopsRoleDev | jq .status.token | sed 's/\"//g' | pbcopy"
+alias kubetokentest="aws eks get-token --cluster-name=tech-sg-cluster --profile EksDevopsRoleTest | jq .status.token | sed 's/\"//g' | pbcopy"
+alias kubetokenprod="aws eks get-token --cluster-name=tech-sg-cluster --profile EksDevopsRoleProd | jq .status.token | sed 's/\"//g' | pbcopy"
+
 ########## Startup :D ######
 fortune | cowsay -f bud-frogs | lolcat
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.jenv/bin:$PATH"
+#curl wttr.in/Singapore
+
+# Homebrew on Apple Silicon
+path=('/opt/homebrew/bin' $path)
+export PATH
+
+# PHP Composer
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+# bun completions
+[ -s "/Users/chngu/.bun/_bun" ] && source "/Users/chngu/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Android
+export ANDROID_HOME="/Users/chngu/Library/Android/sdk"
+export ANDROID_SDK="$ANDROID_HOME/sdk"
+export PATH="$PATH:/Users/chngu/Library/Android/sdk/platform-tools"
