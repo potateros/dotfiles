@@ -68,6 +68,7 @@ brew install --cask itsycal
 brew install --cask linearmouse
 brew install --cask macs-fan-control
 # brew install --cask ngrok
+brew install --cask orbstack
 # brew install --cask openvpn-connect
 # brew install --cask pock
 brew install --cask postman
