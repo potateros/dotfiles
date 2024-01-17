@@ -76,6 +76,7 @@ brew install --cask raycast
 brew install --cask rescuetime
 # brew install --cask rubymine
 brew install --cask slack
+# brew install --cask spacedrive
 brew install --cask spotify
 # brew install --cask teamspeak-client
 # brew install --cask teamviewer
