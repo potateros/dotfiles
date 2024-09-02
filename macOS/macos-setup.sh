@@ -50,12 +50,13 @@ brew install nvm
 brew install ranger
 # brew install rvm
 brew install tldr
+brew install uv
 brew install wget
 brew install --cask aldente
 brew install --cask android-studio
 brew install --cask anydesk
 brew install --cask arc
-# brew install --cask betterdisplay
+brew install --cask betterdisplay
 # brew install --cask boop
 brew install --cask caffeine
 brew install --cask calibre
@@ -66,13 +67,17 @@ brew install --cask evernote
 brew install --cask firefox
 # brew install --cask gitkraken
 brew install --cask google-chrome
+brew install --cask handbrake
 # brew install --cask intellij-idea
 brew install --cask iterm2
 brew install --cask itsycal
+brew install --cask jetbrains-toolbox
 brew install --cask keka
 # brew install --cask libreoffice
 brew install --cask linearmouse
+brew install --cask logi-options+
 brew install --cask logitech-g-hub
+brew install --cask macfuse
 brew install --cask macs-fan-control
 brew install --cask mongodb-compass
 # brew install --cask ngrok
