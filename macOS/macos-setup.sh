@@ -72,6 +72,7 @@ brew install --cask handbrake
 brew install --cask iterm2
 brew install --cask itsycal
 brew install --cask jetbrains-toolbox
+brew install --cask karabiner-elements
 brew install --cask keka
 # brew install --cask libreoffice
 brew install --cask linearmouse
