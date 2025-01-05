@@ -134,8 +134,26 @@ brew install --cask transmission
 brew install --cask visual-studio-code
 brew install --cask vlc
 brew install --cask vmware-fusion
+brew install --cask warp
 brew install --cask zed
 # brew install --cask zettlr
 # brew install --cask zoomus
 
-wget https://freefilesync.org/download/FreeFileSync_13.3_macOS.zip
+mkdir ~/Downloads/setup_files
+cd ~/Downloads/setup_files
+
+TEMP_FFS=https://freefilesync.org/download/FreeFileSync_13.9_macOS.zip
+wget --output-document ffs.zip $TEMP_FFS && unzip ffs.zip -d ffs
+
+touch ~/.config/ghostty/config
+
+tee output.txt <<EOF
+keybind = cmd+right=text:\x05
+keybind = cmd+left=text:\x01
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
+keybind = cmd+delete=text:\x0b
+keybind = cmd+backspace=text:\x15
+keybind = opt+delete=esc:d
+EOF
+echo "Created ghostty config"
