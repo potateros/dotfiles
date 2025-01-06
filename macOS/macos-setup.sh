@@ -34,6 +34,7 @@ brew install bat
 brew install coreutils
 brew install cowsay
 brew install derailed/k9s/k9s
+brew install duti
 brew install docker
 brew install exa
 brew install fasd
@@ -138,6 +139,44 @@ brew install --cask warp
 brew install --cask zed
 # brew install --cask zettlr
 # brew install --cask zoomus
+
+DEFAULT_EDITOR="com.microsoft.VSCode"
+duti -s $DEFAULT_EDITOR public.json all
+duti -s $DEFAULT_EDITOR public.plain-text all
+duti -s $DEFAULT_EDITOR public.python-script all
+duti -s $DEFAULT_EDITOR public.shell-script all
+duti -s $DEFAULT_EDITOR public.source-code all
+duti -s $DEFAULT_EDITOR public.text all
+duti -s $DEFAULT_EDITOR public.unix-executable all
+duti -s $DEFAULT_EDITOR public.data all
+duti -s $DEFAULT_EDITOR .c all
+duti -s $DEFAULT_EDITOR .cpp all
+duti -s $DEFAULT_EDITOR .cs all
+duti -s $DEFAULT_EDITOR .css all
+duti -s $DEFAULT_EDITOR .go all
+duti -s $DEFAULT_EDITOR .java all
+duti -s $DEFAULT_EDITOR .js all
+duti -s $DEFAULT_EDITOR .sass all
+duti -s $DEFAULT_EDITOR .scss all
+duti -s $DEFAULT_EDITOR .less all
+duti -s $DEFAULT_EDITOR .vue all
+duti -s $DEFAULT_EDITOR .cfg all
+duti -s $DEFAULT_EDITOR .json all
+duti -s $DEFAULT_EDITOR .jsx all
+duti -s $DEFAULT_EDITOR .log all
+duti -s $DEFAULT_EDITOR .lua all
+duti -s $DEFAULT_EDITOR .md all
+duti -s $DEFAULT_EDITOR .php all
+duti -s $DEFAULT_EDITOR .pl all
+duti -s $DEFAULT_EDITOR .py all
+duti -s $DEFAULT_EDITOR .rb all
+duti -s $DEFAULT_EDITOR .ts all
+duti -s $DEFAULT_EDITOR .tsx all
+duti -s $DEFAULT_EDITOR .txt all
+duti -s $DEFAULT_EDITOR .conf all
+duti -s $DEFAULT_EDITOR .yaml all
+duti -s $DEFAULT_EDITOR .yml all
+duti -s $DEFAULT_EDITOR .toml all
 
 mkdir ~/Downloads/setup_files
 cd ~/Downloads/setup_files
