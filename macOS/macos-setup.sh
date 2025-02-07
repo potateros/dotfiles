@@ -78,6 +78,7 @@ brew install --cask disk-expert
 brew install --cask evernote
 # brew install --cask figma
 brew install --cask firefox
+brew install --cask font-atkinson-hyperlegible
 brew install --cask font-fira-code
 brew install --cask font-monaspace
 # brew install --cask franz
