@@ -43,6 +43,7 @@ brew install fortune
 brew install gh
 # brew install gnupg
 # brew install golang
+brew install huggingface-cli
 brew install htop
 brew install jenv
 brew install kubectx
